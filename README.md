@@ -5,6 +5,9 @@ requested crossword UI and adds what a real product needs around it: player
 accounts, a personal dashboard, a daily puzzle, two languages, an admin panel
 and a phone experience with its own keyboard.
 
+**Demo video:** [docs/demo.mp4](docs/demo.mp4), a narrated two-minute
+walkthrough of the player side, the phone view and the admin panel.
+
 ![Dashboard](docs/dashboard.png)
 
 <p>
@@ -21,8 +24,7 @@ and a phone experience with its own keyboard.
 | Admin panel | `https://<host>/admin`, email `admin@apollo.st` / `apollo` (or `/admin?token=admin-apollo-crossword`) |
 
 Replace `<host>` with the hosted URL sent with the submission, or with
-`localhost:8787` when running locally. A narrated walkthrough is in
-`docs/demo.mp4`.
+`localhost:8787` when running locally.
 
 ```bash
 npm install
