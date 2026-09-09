@@ -21,7 +21,8 @@ and a phone experience with its own keyboard.
 | Admin panel | `https://<host>/admin`, email `admin@apollo.st` / `apollo` (or `/admin?token=admin-apollo-crossword`) |
 
 Replace `<host>` with the hosted URL sent with the submission, or with
-`localhost:8787` when running locally:
+`localhost:8787` when running locally. A narrated walkthrough is in
+`docs/demo.mp4`.
 
 ```bash
 npm install
