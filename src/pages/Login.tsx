@@ -1,6 +1,7 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import { Navigate, useLocation, useNavigate, useSearchParams } from 'react-router';
 import { BrandMark } from '../components/BrandMark';
+import { IconEye, IconEyeOff } from '../components/Icons';
 import { TopBar } from '../components/TopBar';
 import { describeError, useI18n } from '../i18n';
 import { useApi } from '../services/api';
@@ -22,6 +23,7 @@ export function Login() {
   const [params] = useSearchParams();
   const { player, accept } = useSession();
   const [error, setError] = useState<string | null>(null);
+  const [showPassword, setShowPassword] = useState(false);
   const [busy, setBusy] = useState(false);
   const linkToken = params.get('token');
   const [linkState, setLinkState] = useState<'idle' | 'working' | 'failed'>(linkToken ? 'working' : 'idle');
@@ -97,7 +99,18 @@ export function Login() {
                 <label className={styles.label} htmlFor="password">
                   {t('login.password')}
                 </label>
-                <input id="password" name="password" type="password" className={styles.input} autoComplete="current-password" required />
+                <div className={styles.passwordField}>
+                  <input id="password" name="password" type={showPassword ? 'text' : 'password'} className={styles.input} autoComplete="current-password" required />
+                  <button
+                    type="button"
+                    className={`btn btn-ghost btn-icon ${styles.eye}`}
+                    onClick={() => setShowPassword((value) => !value)}
+                    aria-label={showPassword ? t('prefs.hidePassword') : t('prefs.showPassword')}
+                    title={showPassword ? t('prefs.hidePassword') : t('prefs.showPassword')}
+                  >
+                    {showPassword ? <IconEyeOff size={16} /> : <IconEye size={16} />}
+                  </button>
+                </div>
                 {error && (
                   <p className={styles.error} role="alert">
                     {error}

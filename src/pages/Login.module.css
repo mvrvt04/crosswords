@@ -166,6 +166,30 @@
   border-color: transparent;
 }
 
+.passwordField {
+  position: relative;
+}
+
+.passwordField .input {
+  padding-right: 44px;
+}
+
+.eye {
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  color: var(--text-3);
+}
+
+.eye:hover {
+  color: var(--text);
+  background: var(--surface-2);
+}
+
 .error {
   color: var(--err);
   font-size: 13px;

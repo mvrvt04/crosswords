@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState, type FormEvent } from 'react';
 import { NavLink, Outlet, useLocation, useNavigate, useSearchParams } from 'react-router';
 import { BrandMark } from '../../components/BrandMark';
-import { IconDashboard, IconExternal, IconGridSmall, IconHistory, IconMoon, IconSun, IconUsers } from '../../components/Icons';
+import { IconDashboard, IconExternal, IconEye, IconEyeOff, IconGridSmall, IconHistory, IconMoon, IconSun, IconUsers } from '../../components/Icons';
 import { Toast } from '../../components/Toast';
 import { TopBar } from '../../components/TopBar';
 import { useTheme } from '../../hooks/useTheme';
@@ -54,6 +54,7 @@ export function AdminLayout() {
   const [overview, setOverview] = useState<AdminOverview | null>(null);
   const [gateError, setGateError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const linkToken = params.get('token');
   const [checking, setChecking] = useState(Boolean(readSession()) || Boolean(linkToken));
 
@@ -183,7 +184,18 @@ export function AdminLayout() {
                 <label className={loginStyles.label} htmlFor="admin-password">
                   Password
                 </label>
-                <input id="admin-password" name="password" type="password" className={loginStyles.input} autoComplete="current-password" required />
+                <div className={loginStyles.passwordField}>
+                  <input id="admin-password" name="password" type={showPassword ? 'text' : 'password'} className={loginStyles.input} autoComplete="current-password" required />
+                  <button
+                    type="button"
+                    className={`btn btn-ghost btn-icon ${loginStyles.eye}`}
+                    onClick={() => setShowPassword((value) => !value)}
+                    aria-label={showPassword ? 'Hide password' : 'Show password'}
+                    title={showPassword ? 'Hide password' : 'Show password'}
+                  >
+                    {showPassword ? <IconEyeOff size={16} /> : <IconEye size={16} />}
+                  </button>
+                </div>
                 {gateError && (
                   <p className={loginStyles.error} role="alert">
                     {gateError}
