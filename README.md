@@ -5,6 +5,9 @@ requested crossword UI and adds what a real product needs around it: player
 accounts, a personal dashboard, a daily puzzle, two languages, an admin panel
 and a phone experience with its own keyboard.
 
+**Live:** [apollo-crossword-production.up.railway.app](https://apollo-crossword-production.up.railway.app) · sign in as the reviewer with
+[this link](https://apollo-crossword-production.up.railway.app/login?token=matteo-natale-apollo)
+
 **Demo video:** [docs/demo.mp4](docs/demo.mp4), a narrated two-minute
 walkthrough of the player side, the phone view and the admin panel.
 
@@ -19,12 +22,11 @@ walkthrough of the player side, the phone view and the admin panel.
 
 | Where | How |
 |---|---|
-| Reviewer account | `https://<host>/login?token=matteo-natale-apollo` signs in with nothing to type |
-| Same account, by form | `matteo@apollo.st` / `password` |
-| Admin panel | `https://<host>/admin`, email `admin@apollo.st` / `apollo` (or `/admin?token=admin-apollo-crossword`) |
+| Reviewer account | [https://apollo-crossword-production.up.railway.app/login?token=matteo-natale-apollo](https://apollo-crossword-production.up.railway.app/login?token=matteo-natale-apollo) signs in with nothing to type |
+| Same account, by form | [https://apollo-crossword-production.up.railway.app/login](https://apollo-crossword-production.up.railway.app/login) with `matteo@apollo.st` / `password` |
+| Admin panel | [https://apollo-crossword-production.up.railway.app/admin](https://apollo-crossword-production.up.railway.app/admin), with the admin credentials sent with the submission (locally: `admin@apollo.st` / `apollo`) |
 
-Replace `<host>` with the hosted URL sent with the submission, or with
-`localhost:8787` when running locally.
+The same paths work on `http://localhost:8787` when running locally:
 
 ```bash
 npm install
