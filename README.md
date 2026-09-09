@@ -24,7 +24,7 @@ walkthrough of the player side, the phone view and the admin panel.
 |---|---|
 | Reviewer account | [https://apollo-crossword-production.up.railway.app/login?token=matteo-natale-apollo](https://apollo-crossword-production.up.railway.app/login?token=matteo-natale-apollo) signs in with nothing to type |
 | Same account, by form | [https://apollo-crossword-production.up.railway.app/login](https://apollo-crossword-production.up.railway.app/login) with `matteo@apollo.st` / `password` |
-| Admin panel | [https://apollo-crossword-production.up.railway.app/admin](https://apollo-crossword-production.up.railway.app/admin), with the admin credentials sent with the submission (locally: `admin@apollo.st` / `apollo`) |
+| Admin panel | [https://apollo-crossword-production.up.railway.app/admin](https://apollo-crossword-production.up.railway.app/admin), email `admin@apollo.st` / password `apollo` (or [this link](https://apollo-crossword-production.up.railway.app/admin?token=admin-apollo-crossword)) |
 
 The same paths work on `http://localhost:8787` when running locally:
 
