@@ -1,0 +1,332 @@
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.cardHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.cardTitle {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.cardMeta {
+  font-size: 13px;
+  color: var(--text-3);
+}
+
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent-strong);
+  text-decoration: none;
+}
+
+.cardLink:hover {
+  text-decoration: underline;
+}
+
+@media (pointer: coarse) {
+  .cardLink {
+    min-height: 40px;
+    padding: 0 6px;
+    margin: -10px -6px;
+  }
+}
+
+.empty {
+  padding: 16px 0;
+  color: var(--text-3);
+  font-size: 14px;
+}
+
+/* Today's puzzles */
+
+.todayList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.todayRow {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.todayRow:last-child {
+  border-bottom: 0;
+}
+
+.todayLang {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.todayTitle {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.todayBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-2);
+}
+
+.todayPinned {
+  background: var(--accent-100);
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
+.todayHint {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+/* Feed */
+
+.feed,
+.ranking {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.feedRow {
+  display: grid;
+  grid-template-columns: 1.2fr 1.4fr auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.feedRow:last-child {
+  border-bottom: 0;
+}
+
+.feedWho {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.feedWhat {
+  color: var(--text-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.feedTime {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.feedWhen {
+  font-size: 12px;
+  color: var(--text-3);
+  white-space: nowrap;
+  min-width: 70px;
+  text-align: right;
+}
+
+/* Ranking */
+
+.rankRow {
+  display: grid;
+  grid-template-columns: 24px 1fr auto auto;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.rankRow:last-child {
+  border-bottom: 0;
+}
+
+.rankIndex {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+.rankRow:first-child .rankIndex {
+  background: var(--accent-100);
+  color: var(--accent-strong);
+}
+
+.rankName {
+  font-weight: 600;
+}
+
+.rankGames {
+  font-size: 13px;
+  color: var(--text-3);
+}
+
+.rankBest {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  min-width: 44px;
+  text-align: right;
+}
+
+/* Chart */
+
+.chartCard {
+  min-width: 0;
+}
+
+.plot {
+  position: relative;
+  width: 100%;
+  min-height: 180px;
+}
+
+.svg {
+  display: block;
+  overflow: visible;
+  font-family: var(--font-sans);
+}
+
+.grid {
+  stroke: var(--border);
+}
+
+.baseline {
+  stroke: var(--border-strong);
+}
+
+.tick,
+.axis {
+  fill: var(--text-3);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.bar {
+  fill: var(--accent);
+  pointer-events: none;
+  transform-box: fill-box;
+  transform-origin: bottom;
+  animation: grow 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: calc(80ms + var(--i) * 30ms);
+}
+
+.columnHover .bar {
+  fill: var(--accent-strong);
+}
+
+@keyframes grow {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.hit {
+  fill: transparent;
+  outline: none;
+}
+
+.tooltip {
+  position: absolute;
+  transform: translate(-50%, calc(-100% - 8px));
+  display: flex;
+  flex-direction: column;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: var(--text);
+  color: var(--bg);
+  box-shadow: var(--shadow-md);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.tooltipValue {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tooltipMeta {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    animation: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .tiles {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .tiles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feedRow {
+    grid-template-columns: 1fr auto;
+  }
+
+  .feedWhat,
+  .feedWhen {
+    display: none;
+  }
+}

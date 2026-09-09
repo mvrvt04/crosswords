@@ -1,0 +1,25 @@
+/* Sized in em so padding, gap and radius scale with the mark, not its parent. */
+.mark {
+  flex: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 1em;
+  height: 1em;
+  gap: 0.07em;
+  padding: 0.17em;
+  border-radius: 0.27em;
+  background: var(--text);
+  line-height: 1;
+}
+
+.mark i {
+  display: block;
+  min-height: 0;
+  border-radius: 0.06em;
+  background: var(--bg);
+}
+
+.mark i:nth-child(2),
+.mark i:nth-child(3) {
+  background: var(--accent);
+}

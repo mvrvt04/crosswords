@@ -1,0 +1,202 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  height: var(--header-height);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.back {
+  flex: none;
+  color: var(--text-2);
+  padding: 0 10px 0 6px;
+  text-decoration: none;
+}
+
+.backLabel {
+  font-weight: 500;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 40px;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.titles {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.app {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.progressText {
+  font-weight: 400;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pencilOn {
+  color: var(--accent-strong);
+  background: var(--accent-100);
+}
+
+.timer {
+  min-width: 82px;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.timer:disabled {
+  opacity: 0.7;
+}
+
+.timerPaused {
+  color: var(--accent-strong);
+}
+
+.time {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.progress {
+  height: 3px;
+  background: transparent;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.progressDone {
+  background: var(--ok);
+}
+
+.actions {
+  flex: none;
+}
+
+@media (max-width: 900px) {
+  .inner .editGroup {
+    display: none;
+  }
+
+  /* Tablets: the back button becomes an arrow so the title keeps its room. */
+  .inner .backLabel {
+    display: none;
+  }
+
+  .inner .back {
+    width: 40px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .inner {
+    padding: 0 10px;
+    gap: 6px;
+  }
+
+  .inner .desktopOnly {
+    display: none;
+  }
+
+  .actions {
+    gap: 4px;
+  }
+
+  .timer {
+    min-width: 0;
+    padding: 0 8px;
+  }
+
+  .progressText {
+    display: none;
+  }
+}
+
+@media (max-width: 460px) {
+  .titles {
+    display: none;
+  }
+}
+
+/* Small phones: every pixel counts, but nothing may spill off screen. */
+@media (max-width: 400px) {
+  .inner {
+    padding: 0 8px;
+    gap: 4px;
+  }
+
+  .actions,
+  .group {
+    gap: 2px;
+  }
+
+  /* The back arrow already leads home; the squeezed brand mark adds nothing. */
+  .brand {
+    display: none;
+  }
+
+  .timer {
+    padding: 0 6px;
+  }
+
+  .time {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,449 @@
+/* Welcome (no name yet) --------------------------------------------------- */
+
+.welcome {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 40px 20px;
+  text-align: center;
+  animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.welcomeTitle {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.welcomeText {
+  max-width: 420px;
+  color: var(--text-2);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.nameForm {
+  display: flex;
+  gap: 8px;
+  width: min(100%, 380px);
+  margin-top: 8px;
+}
+
+.nameInput {
+  flex: 1;
+  min-width: 0;
+  min-height: 40px;
+  padding: 0 12px;
+  font: inherit;
+  font-size: 15px;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+}
+
+.nameInput:focus {
+  outline: 2px solid var(--focus);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+/* Hero --------------------------------------------------------------------- */
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 2px 0 6px;
+}
+
+.rename {
+  display: inline-flex;
+  padding: 6px;
+  border-radius: 6px;
+  color: var(--text-3);
+}
+
+.rename:hover {
+  color: var(--text);
+  background: var(--surface-2);
+}
+
+.sub {
+  color: var(--text-2);
+  font-size: 15px;
+}
+
+.cta {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.playButton {
+  min-height: 44px;
+  padding: 0 18px;
+  font-size: 15px;
+}
+
+.continue {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 14px;
+  min-height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-100);
+  border: 1px solid var(--accent-soft);
+  color: var(--text);
+  text-decoration: none;
+  transition: background-color 0.12s;
+}
+
+.continue:hover {
+  background: var(--accent-soft);
+}
+
+.continueLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.continueTitle {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.continueMeta {
+  font-size: 12px;
+  color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Stats -------------------------------------------------------------------- */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* Columns ------------------------------------------------------------------ */
+
+.columns {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.panel {
+  min-width: 0;
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 22px 18px;
+  color: var(--text-3);
+  font-size: 14px;
+  background: var(--surface);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+}
+
+.history,
+.library {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.historyRow,
+.libraryRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.historyRow:last-child,
+.libraryRow:last-child {
+  border-bottom: 0;
+}
+
+.historyText,
+.libraryText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.historyTitle,
+.libraryTitle {
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.historyMeta,
+.libraryMeta {
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.historyBadges {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: none;
+}
+
+.historyTime {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  min-width: 48px;
+  text-align: right;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-2);
+  white-space: nowrap;
+}
+
+.badgeOk {
+  background: var(--ok-soft);
+  color: var(--ok);
+  font-weight: 600;
+}
+
+.solvedTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ok);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 860px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .columns {
+    grid-template-columns: 1fr;
+  }
+
+  .name {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .badge {
+    display: none;
+  }
+}
+
+/* Today's crossword card ------------------------------------------------- */
+
+/*
+ * The one thing to do today. It takes all the hero width left of the
+ * greeting and wears the same dark crossword backdrop as the sign-in page
+ * (Login.module.css .backdrop/.pattern, rendered inside the card), so it
+ * stands apart from the light dashboard without a new colour.
+ */
+.daily {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 0 1 560px;
+  min-width: 280px;
+  max-width: 100%;
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  color: #fafaf9;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 16px 40px -18px rgba(0, 0, 0, 0.55),
+    0 24px 60px -30px rgba(212, 106, 8, 0.35);
+}
+
+/* The sign-in glows are sized for a whole page; in a card they would swallow
+   the dark ground, so they are scaled to the corners of the card instead. */
+.daily .dailyBackdrop {
+  background:
+    radial-gradient(55% 140% at 0% 0%, rgba(212, 106, 8, 0.42) 0%, transparent 70%),
+    radial-gradient(45% 140% at 100% 100%, rgba(173, 74, 0, 0.45) 0%, transparent 70%),
+    linear-gradient(160deg, #292524 0%, #1c1917 45%, #0c0a09 100%);
+}
+
+/* The sign-in backdrop fades its pattern towards the centre; inside a small
+   card we want the grid everywhere, just quieter. */
+.daily .dailyPattern {
+  mask-image: none;
+  -webkit-mask-image: none;
+  opacity: 0.8;
+}
+
+.dailyLabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #f5ae39;
+}
+
+.dailyTitle {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #fafaf9;
+}
+
+.dailyMeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: rgba(245, 245, 244, 0.75);
+  font-variant-numeric: tabular-nums;
+}
+
+.daily .playButton {
+  margin-top: 8px;
+  align-self: flex-start;
+  background: #eb8a00;
+  border-color: #eb8a00;
+  color: #0c0a09;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.daily .playButton:hover {
+  background: #f5ae39;
+  border-color: #f5ae39;
+  transform: translateY(-1px);
+}
+
+.daily .playButton:focus-visible {
+  outline: 2px solid #f5ae39;
+  outline-offset: 2px;
+}
+
+/* Wide: text on the left, the Play button on the right, vertically centred. */
+@media (min-width: 861px) {
+  .daily {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto auto;
+    column-gap: 24px;
+    align-items: center;
+  }
+
+  .dailyLabel {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .dailyTitle {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 20px;
+  }
+
+  .dailyMeta {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .daily .playButton {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    margin-top: 0;
+    align-self: center;
+    padding: 0 26px;
+  }
+}
+
+.todayTag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+  background: var(--accent-100);
+  padding: 2px 7px;
+  border-radius: 999px;
+}
+
+@media (max-width: 860px) {
+  .daily {
+    width: 100%;
+    flex-basis: 100%;
+  }
+}

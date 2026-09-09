@@ -1,0 +1,197 @@
+.root {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  min-height: 0;
+  height: 100%;
+}
+
+.tabs {
+  display: none;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.heading {
+  flex: none;
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  border-bottom: 1px solid var(--border);
+}
+
+.list {
+  flex: 1;
+  min-height: 0;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+.item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.6rem 1fr auto;
+  align-items: start;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 10px 8px 8px;
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.35;
+  color: var(--text);
+  transition: background-color 0.1s;
+}
+
+.item:hover {
+  background: var(--surface-2);
+}
+
+.item:focus-visible {
+  outline-offset: -2px;
+}
+
+/* Fingers need taller rows than mouse pointers. */
+@media (pointer: coarse) {
+  .item {
+    min-height: 44px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+  }
+}
+
+.number {
+  font-weight: 600;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-2);
+}
+
+.text {
+  min-width: 0;
+}
+
+.enumeration {
+  color: var(--text-3);
+  white-space: nowrap;
+}
+
+.tick {
+  display: inline-flex;
+  color: var(--ok);
+  margin-top: 2px;
+}
+
+.crossing {
+  border-left-color: var(--accent-soft);
+}
+
+.current,
+.current:hover {
+  background: var(--accent-100);
+  border-left-color: var(--accent);
+}
+
+.current .number {
+  color: var(--accent-strong);
+}
+
+.solved {
+  color: var(--text-3);
+}
+
+.solved .number {
+  color: var(--text-3);
+}
+
+@media (max-width: 1100px) and (min-width: 861px) {
+  .root {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+/* Tabs on narrow screens ------------------------------------------------- */
+
+@media (max-width: 860px) {
+  .root {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 8px;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    background: var(--surface-2);
+    border-radius: var(--radius);
+  }
+
+  .tab {
+    flex: 1;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    min-height: 36px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-2);
+  }
+
+  .tabActive {
+    background: var(--surface);
+    color: var(--text);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .tabCount {
+    font-size: 12px;
+    color: var(--text-3);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .section {
+    display: none;
+  }
+
+  .sectionActive {
+    display: flex;
+  }
+
+  .heading {
+    display: none;
+  }
+
+  .list {
+    max-height: 46dvh;
+  }
+}
+
+/* Phones held sideways: the list fills the right column and scrolls itself. */
+@media (max-width: 1000px) and (max-height: 520px) and (orientation: landscape) {
+  .list {
+    max-height: calc(100dvh - var(--header-height) - var(--keyboard-height) - 132px);
+    min-height: 88px;
+  }
+}

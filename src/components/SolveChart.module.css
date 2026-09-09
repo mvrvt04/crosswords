@@ -1,0 +1,210 @@
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px 12px;
+  animation: card-in 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: var(--text-3);
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 28px 0 20px;
+  color: var(--text-3);
+  font-size: 14px;
+}
+
+.plotWrap {
+  position: relative;
+  width: 100%;
+  min-height: 220px;
+}
+
+.svg {
+  display: block;
+  overflow: visible;
+  font-family: var(--font-sans);
+}
+
+.bar,
+.check,
+.label {
+  pointer-events: none;
+}
+
+.grid {
+  stroke: var(--border);
+  stroke-width: 1;
+}
+
+.baseline {
+  stroke: var(--border-strong);
+  stroke-width: 1;
+}
+
+.tick,
+.axis {
+  fill: var(--text-3);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.label {
+  fill: var(--text-2);
+  font-size: 11px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Columns grow from the baseline, one after another, on first paint. */
+.column {
+  transform-box: fill-box;
+}
+
+.bar {
+  fill: var(--accent);
+  transform-box: fill-box;
+  transform-origin: bottom;
+  animation: grow 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: calc(120ms + var(--i) * 55ms);
+  transition: fill 0.12s;
+}
+
+.columnHover .bar {
+  fill: var(--accent-strong);
+}
+
+.check,
+.label {
+  animation: fade 0.3s ease-out both;
+  animation-delay: calc(600ms + var(--i) * 55ms);
+}
+
+@keyframes grow {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hit {
+  fill: transparent;
+  cursor: default;
+  outline: none;
+}
+
+.hit:focus-visible + .bar {
+  fill: var(--accent-strong);
+}
+
+.checkRing {
+  fill: var(--ok);
+}
+
+.checkIcon {
+  stroke: #fff;
+  stroke-width: 3;
+}
+
+.tooltip {
+  position: absolute;
+  transform: translate(-50%, calc(-100% - 10px));
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 150px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: var(--text);
+  color: var(--bg);
+  box-shadow: var(--shadow-md);
+  pointer-events: none;
+  z-index: 2;
+  animation: fade 0.12s ease-out both;
+}
+
+.tooltipTitle {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.tooltipValue {
+  font-size: 16px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.tooltipMeta {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.legendCheck {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--ok);
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar,
+  .check,
+  .label,
+  .card {
+    animation: none;
+  }
+}

@@ -1,0 +1,273 @@
+.wrap {
+  position: relative;
+  width: 100%;
+  container-type: inline-size;
+}
+
+.grid {
+  --cell: calc(100cqw / var(--cols));
+  display: grid;
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  gap: 1px;
+  padding: 1px;
+  background: var(--grid-line);
+  border: 2px solid var(--grid-border);
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: var(--cols) / var(--rows);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.row {
+  display: contents;
+}
+
+.cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  background: var(--cell-bg);
+  color: var(--cell-text);
+  font-size: calc(var(--cell) * 0.5);
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.1s ease-out;
+}
+
+.block {
+  background: var(--cell-block);
+  cursor: default;
+}
+
+.inWord {
+  background: var(--cell-word);
+}
+
+.inWord .number {
+  color: var(--cell-word-number);
+}
+
+.selected {
+  background: var(--cell-selected);
+  color: var(--cell-selected-text);
+}
+
+.selected .number {
+  color: var(--cell-selected-text);
+  opacity: 0.8;
+}
+
+/* Keyboard focus lives on the hidden input; show it on the selected cell. */
+.wrap:focus-within .selected {
+  box-shadow: inset 0 0 0 max(2px, calc(var(--cell) * 0.06)) var(--cell-focus-ring);
+}
+
+.number {
+  position: absolute;
+  top: calc(var(--cell) * 0.04);
+  left: calc(var(--cell) * 0.07);
+  font-size: clamp(8px, calc(var(--cell) * 0.24), 15px);
+  font-weight: 600;
+  color: var(--cell-number);
+}
+
+.letter {
+  transform: translateY(calc(var(--cell) * 0.06));
+}
+
+/* Word breaks, from the enumeration ------------------------------------ */
+
+.barRight::after,
+.barBottom::before,
+.dashRight::after,
+.dashBottom::before {
+  content: '';
+  position: absolute;
+  background: var(--grid-border);
+  pointer-events: none;
+}
+
+.barRight::after {
+  top: 0;
+  right: -1px;
+  width: max(2px, calc(var(--cell) * 0.07));
+  height: 100%;
+}
+
+.barBottom::before {
+  left: 0;
+  bottom: -1px;
+  height: max(2px, calc(var(--cell) * 0.07));
+  width: 100%;
+}
+
+.dashRight::after {
+  top: 50%;
+  right: -1px;
+  width: calc(var(--cell) * 0.16);
+  height: max(2px, calc(var(--cell) * 0.05));
+  transform: translate(50%, -50%);
+}
+
+.dashBottom::before {
+  left: 50%;
+  bottom: -1px;
+  height: calc(var(--cell) * 0.16);
+  width: max(2px, calc(var(--cell) * 0.05));
+  transform: translate(-50%, 50%);
+}
+
+/* Pencil (tentative) letters ------------------------------------------- */
+
+.pencil .letter {
+  color: var(--text-3);
+  font-weight: 500;
+}
+
+.selected.pencil .letter {
+  color: var(--cell-selected-text);
+  opacity: 0.7;
+}
+
+/* Feedback states --------------------------------------------------------- */
+
+.correct .letter {
+  color: var(--cell-ok);
+}
+
+.selected.correct .letter {
+  color: var(--cell-selected-text);
+}
+
+.wrong .letter {
+  color: var(--cell-err);
+}
+
+.wrong .letter::after {
+  /* A diagonal strike-through means "checked and wrong", not just colour. */
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(var(--cell) * 0.9);
+  height: max(2px, calc(var(--cell) * 0.045));
+  background: var(--cell-err);
+  transform: translate(-50%, -50%) rotate(-45deg);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.revealed::after {
+  /* Small corner triangle: this letter was revealed. */
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-style: solid;
+  border-width: 0 calc(var(--cell) * 0.28) calc(var(--cell) * 0.28) 0;
+  border-color: transparent var(--cell-revealed) transparent transparent;
+  pointer-events: none;
+}
+
+.pulse {
+  animation: pulse 0.5s cubic-bezier(0.2, 0.8, 0.3, 1.2) both;
+  animation-delay: calc(var(--i) * 26ms);
+  z-index: 1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.14);
+    background: var(--ok-soft);
+    box-shadow: 0 4px 14px -2px rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.solved .cell {
+  cursor: default;
+}
+
+/* Hidden input that carries focus and summons the mobile keyboard --------- */
+
+.input {
+  position: absolute;
+  left: calc(2px + var(--x) * (100% - 4px) / var(--cols));
+  top: calc(2px + var(--y) * (100% - 4px) / var(--rows));
+  width: calc((100% - 4px) / var(--cols));
+  height: calc((100% - 4px) / var(--rows));
+  margin: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  color: transparent;
+  background: transparent;
+  caret-color: transparent;
+  font-size: 16px; /* prevents iOS from zooming the page on focus */
+  pointer-events: none;
+  outline: none;
+}
+
+/* Pause overlay ----------------------------------------------------------- */
+
+.paused .letter {
+  visibility: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--overlay);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: fade-in 0.15s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.overlayCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.overlayTitle {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.overlayTime {
+  font-size: 28px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 6px;
+}

@@ -1,0 +1,263 @@
+/* Gate: the sign-in page reuses Login.module.css; only the tag lives here. */
+
+.gateTag,
+.brandTag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+  background: var(--accent-100);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+/* Shell ------------------------------------------------------------------ */
+
+.shell {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  min-height: 100dvh;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 12px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 8px 18px;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.brandName {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.brandTag {
+  align-self: flex-start;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-2);
+  text-decoration: none;
+  transition: background-color 0.1s, color 0.1s;
+}
+
+.navItem:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.navActive,
+.navActive:hover {
+  background: var(--accent-100);
+  color: var(--accent-strong);
+}
+
+.sidebarFooter {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.signOut {
+  color: var(--text-3);
+}
+
+.main {
+  min-width: 0;
+  padding: 28px 32px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Page header ------------------------------------------------------------ */
+
+.pageHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.pageTitle {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.pageDescription {
+  margin-top: 4px;
+  color: var(--text-3);
+  font-size: 14px;
+}
+
+.pageActions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Narrow screens: sidebar becomes a top bar with a horizontal nav ------- */
+
+@media (max-width: 860px) {
+  .shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    height: auto;
+    min-width: 0;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 8px 10px;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav {
+    flex: 1 1 100%;
+    min-width: 0;
+    order: 3;
+  }
+
+  .sidebarFooter {
+    order: 2;
+  }
+
+  .brand {
+    padding: 0 6px 0 0;
+  }
+
+  .brandText {
+    display: none;
+  }
+
+  .nav {
+    flex-direction: row;
+    gap: 2px;
+    overflow-x: auto;
+  }
+
+  .navItem {
+    width: auto;
+    padding: 8px 10px;
+    white-space: nowrap;
+  }
+
+  .sidebarFooter {
+    margin-top: 0;
+    margin-left: auto;
+    flex-direction: row;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .sidebarFooter .navItem span {
+    display: none;
+  }
+
+  .sidebarFooter .signOut span {
+    display: inline;
+  }
+
+  .main {
+    padding: 18px 14px 40px;
+  }
+}
+
+/*
+ * Phones: brand and account actions share the first row; the four sections
+ * become an evenly spaced tab strip underneath, icon above label. Nothing
+ * scrolls sideways and every target is at least 40px tall.
+ */
+@media (max-width: 600px) {
+  .sidebar {
+    padding: 6px 8px 4px;
+    row-gap: 2px;
+  }
+
+  .nav {
+    gap: 0;
+    overflow: visible;
+  }
+
+  .navItem {
+    flex: 1 1 0;
+    min-width: 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    min-height: 48px;
+    padding: 4px 2px;
+    font-size: 11px;
+    line-height: 1.2;
+  }
+
+  .sidebarFooter .navItem {
+    flex: none;
+    flex-direction: row;
+    min-height: 40px;
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .main {
+    padding: 16px 12px 36px;
+    gap: 16px;
+  }
+
+  .pageTitle {
+    font-size: 22px;
+  }
+
+  .pageActions {
+    flex: 1 1 100%;
+  }
+
+  .pageActions > * {
+    flex: 1 1 auto;
+  }
+}

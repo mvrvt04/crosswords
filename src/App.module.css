@@ -1,0 +1,15 @@
+.splash {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  animation: breathe 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes breathe {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,190 @@
+.main {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px 20px;
+}
+
+/*
+ * Decorative backdrop: warm amber glows in the corners plus a faint crossword
+ * grid with a few scattered black and amber cells that drift slowly. The
+ * grid fades out towards the centre so the card sits on calm ground, and
+ * everything is built from tokens so it follows the theme.
+ */
+.backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  /* Deliberately dark in both themes so the sign-in card always pops. */
+  background:
+    radial-gradient(720px 480px at 8% 4%, rgba(212, 106, 8, 0.45) 0%, transparent 70%),
+    radial-gradient(620px 440px at 94% 96%, rgba(173, 74, 0, 0.5) 0%, transparent 70%),
+    radial-gradient(440px 340px at 86% 10%, rgba(235, 138, 0, 0.18) 0%, transparent 72%),
+    radial-gradient(400px 320px at 12% 92%, rgba(235, 138, 0, 0.14) 0%, transparent 72%),
+    linear-gradient(160deg, #292524 0%, #1c1917 45%, #0c0a09 100%);
+}
+
+.pattern {
+  position: absolute;
+  inset: 0;
+  mask-image: radial-gradient(ellipse 55% 65% at 50% 50%, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.55) 55%, #000 100%);
+  -webkit-mask-image: radial-gradient(ellipse 55% 65% at 50% 50%, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.55) 55%, #000 100%);
+}
+
+.pattern::before,
+.pattern::after {
+  content: "";
+  position: absolute;
+  inset: -480px 0 0 -480px;
+  mask-repeat: repeat;
+  -webkit-mask-repeat: repeat;
+  mask-size: 480px 480px;
+  -webkit-mask-size: 480px 480px;
+  animation: drift 120s linear infinite;
+}
+
+/* Grid lines + solid cells, in light ink on the dark ground */
+.pattern::before {
+  background: #f5f5f4;
+  opacity: 0.09;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3E%3Cpath d='M40 0V480M80 0V480M120 0V480M160 0V480M200 0V480M240 0V480M280 0V480M320 0V480M360 0V480M400 0V480M440 0V480M0 40H480M0 80H480M0 120H480M0 160H480M0 200H480M0 240H480M0 280H480M0 320H480M0 360H480M0 400H480M0 440H480' stroke='%23000' stroke-width='1' opacity='.45'/%3E%3Cpath d='M80 0h40v40H80zM360 40h40v40h-40zM200 120h40v40h-40zM0 200h40v40H0zM400 240h40v40h-40zM280 360h40v40h-40zM120 440h40v40h-40z' fill='%23000'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3E%3Cpath d='M40 0V480M80 0V480M120 0V480M160 0V480M200 0V480M240 0V480M280 0V480M320 0V480M360 0V480M400 0V480M440 0V480M0 40H480M0 80H480M0 120H480M0 160H480M0 200H480M0 240H480M0 280H480M0 320H480M0 360H480M0 400H480M0 440H480' stroke='%23000' stroke-width='1' opacity='.45'/%3E%3Cpath d='M80 0h40v40H80zM360 40h40v40h-40zM200 120h40v40h-40zM0 200h40v40H0zM400 240h40v40h-40zM280 360h40v40h-40zM120 440h40v40h-40z' fill='%23000'/%3E%3C/svg%3E");
+}
+
+/* Amber "revealed" cells */
+.pattern::after {
+  background: #eb8a00;
+  opacity: 0.5;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3E%3Cpath d='M240 40h40v40h-40zM40 120h40v40H40zM440 160h40v40h-40zM160 280h40v40h-40zM320 400h40v40h-40z' fill='%23000'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3E%3Cpath d='M240 40h40v40h-40zM40 120h40v40H40zM440 160h40v40h-40zM160 280h40v40h-40zM320 400h40v40h-40z' fill='%23000'/%3E%3C/svg%3E");
+}
+
+@keyframes drift {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(480px, 480px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pattern::before,
+  .pattern::after {
+    animation: none;
+  }
+}
+
+.card {
+  width: min(100%, 400px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 28px 24px;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 24px 60px -16px rgba(0, 0, 0, 0.6),
+    0 40px 100px -30px rgba(212, 106, 8, 0.35);
+  text-align: center;
+  animation: rise 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+/* On the dark theme, lift the card one surface step so it still reads as a
+   distinct panel against the near-black ground. */
+:root[data-theme="dark"] .card {
+  background: var(--surface-2);
+  border-color: var(--surface-3);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 4px;
+}
+
+.text {
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+  text-align: left;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-2);
+  margin-top: 6px;
+}
+
+.input {
+  width: 100%;
+  min-height: 42px;
+  padding: 0 12px;
+  font: inherit;
+  font-size: 15px;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+}
+
+.input:focus {
+  outline: 2px solid var(--focus);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+.error {
+  color: var(--err);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.submit {
+  min-height: 42px;
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+/* The offline note (shared .note) sits directly on the dark ground. */
+.main > p {
+  color: rgba(245, 245, 244, 0.7);
+}
+
+.footnote {
+  font-size: 12px;
+  color: var(--text-3);
+  margin-top: 6px;
+}

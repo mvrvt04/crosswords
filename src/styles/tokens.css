@@ -1,0 +1,128 @@
+/*
+ * Design tokens.
+ *
+ * Warm amber accent on stone neutrals, matching the Apollo product palette.
+ * Feedback colours are reserved: green only ever means "correct", red only
+ * ever means "wrong", amber only ever means "where you are / revealed".
+ *
+ * The resolved theme is stamped on <html data-theme="light|dark"> before
+ * first paint (see index.html) and kept in sync by useTheme().
+ */
+
+:root {
+  color-scheme: light;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+
+  --bg: #fafaf9;
+  --surface: #ffffff;
+  --surface-2: #f5f5f4;
+  --surface-3: #e7e5e4;
+  --border: #e7e5e4;
+  --border-strong: #d6d3d1;
+
+  --text: #1c1917;
+  --text-2: #57534d;
+  --text-3: #79716b;
+
+  --accent: #d46a08;
+  --accent-strong: #ad4a00;
+  --accent-soft: #fada99;
+  --accent-100: #fdefcf;
+  --accent-tint: #fff8ea;
+  --on-accent: #ffffff;
+  --btn-primary: #ad4a00;
+  --btn-primary-hover: #8f3c00;
+
+  --ok: #007a55;
+  --ok-soft: #d6f5e6;
+  --err: #c10007;
+  --err-soft: #ffe2e2;
+  --focus: #eb8a00;
+
+  --shadow-sm: 0 1px 2px rgba(28, 25, 23, 0.06), 0 1px 3px rgba(28, 25, 23, 0.08);
+  --shadow-md: 0 10px 30px -10px rgba(28, 25, 23, 0.25), 0 2px 6px rgba(28, 25, 23, 0.08);
+
+  --radius-sm: 8px;
+  --radius: 10px;
+  --radius-lg: 16px;
+
+  /* Grid */
+  --grid-line: #a6a09b;
+  --grid-border: #1c1917;
+  --cell-bg: #ffffff;
+  --cell-block: #1c1917;
+  --cell-text: #1c1917;
+  --cell-number: #57534d;
+  --cell-word: #fdefcf;
+  --cell-word-number: #7a4a10;
+  --cell-selected: #f5ae39;
+  --cell-selected-text: #1c1917;
+  --cell-focus-ring: #ad4a00;
+  --cell-ok: #007a55;
+  --cell-err: #c10007;
+  --cell-revealed: #d46a08;
+  --overlay: rgba(250, 250, 249, 0.75);
+
+  --header-height: 60px;
+  /* Height of the on-screen keyboard on touch devices (see OnScreenKeyboard). */
+  --keyboard-height: 208px;
+}
+
+/* Short landscape screens (phones held sideways): compact chrome. */
+@media (max-height: 520px) and (orientation: landscape) {
+  :root {
+    --header-height: 48px;
+    --keyboard-height: 156px;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #0c0a09;
+  --surface: #1c1917;
+  --surface-2: #292524;
+  --surface-3: #44403b;
+  --border: #292524;
+  --border-strong: #44403b;
+
+  --text: #f5f5f4;
+  --text-2: #a6a09b;
+  --text-3: #9a928b;
+
+  --accent: #eb8a00;
+  --accent-strong: #f5ae39;
+  --accent-soft: #5c3a0e;
+  --accent-100: #3a2810;
+  --accent-tint: #261c10;
+  --on-accent: #0c0a09;
+  --btn-primary: #eb8a00;
+  --btn-primary-hover: #f5ae39;
+
+  --ok: #3ecf8e;
+  --ok-soft: #10392b;
+  --err: #ff6467;
+  --err-soft: #46181b;
+  --focus: #f5ae39;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 12px 32px -8px rgba(0, 0, 0, 0.7), 0 2px 6px rgba(0, 0, 0, 0.4);
+
+  --grid-line: #57534d;
+  --grid-border: #79716b;
+  --cell-bg: #292524;
+  --cell-block: #0c0a09;
+  --cell-text: #f5f5f4;
+  --cell-number: #a6a09b;
+  --cell-word: #4f3810;
+  --cell-word-number: #f5d9a6;
+  --cell-selected: #eb8a00;
+  --cell-selected-text: #0c0a09;
+  --cell-focus-ring: #fff8ea;
+  --cell-ok: #3ecf8e;
+  --cell-err: #ff6467;
+  --cell-revealed: #f5ae39;
+  --overlay: rgba(12, 10, 9, 0.72);
+}
