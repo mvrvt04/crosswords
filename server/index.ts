@@ -119,7 +119,9 @@ async function loadDatabase(): Promise<Database> {
   const puzzles = SEED_PUZZLES.map((seed) => buildPuzzleRecord(seed.data, seed.id, weekAgo));
   const players = seedPlayers(weekAgo, SEED_DEMO ? [...SEED_ACCOUNTS, ...DEMO_ACCOUNTS] : SEED_ACCOUNTS);
   const games = SEED_DEMO ? buildDemoGames(players, puzzles) : [];
-  return { puzzles: withPlayCounts(puzzles, games), players, games, sessions: [], adminSessions: [], daily: {} };
+  // The assessment crossword is pinned as today's English puzzle on first boot,
+  // so the reviewer meets it first; the admin can unpin to let the library rotate.
+  return { puzzles: withPlayCounts(puzzles, games), players, games, sessions: [], adminSessions: [], daily: { en: 'example-crossword' } };
 }
 
 function persist(): void {

@@ -56,7 +56,9 @@ refresh.
 unfinished puzzle, stat tiles that count up, a chart of recent solve times
 and the full puzzle list with best times. **Today's crossword** is the same
 for every player, one per day and language, rotating through the library
-unless the admin pins one.
+unless the admin pins one. On a fresh database the provided Example
+Crossword is pinned as today's English puzzle, so it is the first thing a
+new player meets.
 
 **History.** Every game, grouped by month, with time and a "clean" badge for
 solves without checks or reveals.
@@ -83,6 +85,20 @@ are validated by the same parser the game uses, so errors are exact:
 keyboard under the grid with the keys a phone lacks: switch direction,
 pencil, undo, previous and next clue. The system keyboard never covers the
 grid.
+
+## What I prioritized
+
+1. **The solving experience.** Navigation rules, feedback and keyboard
+   handling came first and got the most iteration, because that is what
+   the brief asks for and what a player feels in the first minute.
+2. **The details around it.** States (empty, in progress, solved, wrong,
+   revealed, paused), accessibility (labels, focus, contrast), phones.
+3. **The product wrapper.** Accounts, dashboard, daily puzzle, admin panel
+   and Italian came last, each kept small enough to be finished and polished
+   rather than sketched.
+
+Left out on purpose: a puzzle editor, leaderboards and a real database.
+They are listed under "With more time".
 
 ## Design decisions
 

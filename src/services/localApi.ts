@@ -44,7 +44,7 @@ function seedDatabase(): Database {
     loginToken: account.loginToken,
   }));
   const games = buildDemoGames(players, puzzles);
-  return { puzzles: withPlayCounts(puzzles, games), players, games, sessions: [], adminSessions: [], daily: {} };
+  return { puzzles: withPlayCounts(puzzles, games), players, games, sessions: [], adminSessions: [], daily: { en: 'example-crossword' } };
 }
 
 function load(): Database {
