@@ -1,0 +1,66 @@
+{
+  "title": "Mini Lunedì",
+  "language": "it",
+  "grid": [
+    "PASTA",
+    "I#O#M",
+    "AGLIO",
+    "N#D#R",
+    "OLIVE"
+  ],
+  "blocks": "#",
+  "entries": {
+    "across": [
+      {
+        "number": 1,
+        "row": 1,
+        "column": 1,
+        "answer": "PASTA",
+        "clue": "Piatto simbolo della cucina italiana",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 4,
+        "row": 3,
+        "column": 1,
+        "answer": "AGLIO",
+        "clue": "Bulbo dal sapore deciso",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 5,
+        "row": 5,
+        "column": 1,
+        "answer": "OLIVE",
+        "clue": "Frutti da cui si ricava l'olio",
+        "enumeration": "(5)"
+      }
+    ],
+    "down": [
+      {
+        "number": 1,
+        "row": 1,
+        "column": 1,
+        "answer": "PIANO",
+        "clue": "Strumento con 88 tasti",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 2,
+        "row": 1,
+        "column": 3,
+        "answer": "SOLDI",
+        "clue": "Denaro",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 3,
+        "row": 1,
+        "column": 5,
+        "answer": "AMORE",
+        "clue": "Sentimento profondo",
+        "enumeration": "(5)"
+      }
+    ]
+  }
+}

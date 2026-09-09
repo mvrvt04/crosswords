@@ -1,0 +1,66 @@
+{
+  "title": "Mini Martedì",
+  "language": "it",
+  "grid": [
+    "TERRA",
+    "E#U#M",
+    "SUONI",
+    "T#T#C",
+    "ARABA"
+  ],
+  "blocks": "#",
+  "entries": {
+    "across": [
+      {
+        "number": 1,
+        "row": 1,
+        "column": 1,
+        "answer": "TERRA",
+        "clue": "Il nostro pianeta",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 4,
+        "row": 3,
+        "column": 1,
+        "answer": "SUONI",
+        "clue": "Li percepisce l'orecchio",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 5,
+        "row": 5,
+        "column": 1,
+        "answer": "ARABA",
+        "clue": "Come la lingua parlata al Cairo",
+        "enumeration": "(5)"
+      }
+    ],
+    "down": [
+      {
+        "number": 1,
+        "row": 1,
+        "column": 1,
+        "answer": "TESTA",
+        "clue": "La parte del corpo con il cervello",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 2,
+        "row": 1,
+        "column": 3,
+        "answer": "RUOTA",
+        "clue": "Gira sotto l'auto",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 3,
+        "row": 1,
+        "column": 5,
+        "answer": "AMICA",
+        "clue": "Compagna fidata",
+        "enumeration": "(5)"
+      }
+    ]
+  }
+}

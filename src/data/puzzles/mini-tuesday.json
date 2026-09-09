@@ -1,0 +1,66 @@
+{
+  "title": "Mini Tuesday",
+  "language": "en",
+  "grid": [
+    "PLANT",
+    "I#R#H",
+    "ADIEU",
+    "N#A#G",
+    "OASIS"
+  ],
+  "blocks": "#",
+  "entries": {
+    "across": [
+      {
+        "number": 1,
+        "row": 1,
+        "column": 1,
+        "answer": "PLANT",
+        "clue": "Green grower",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 4,
+        "row": 3,
+        "column": 1,
+        "answer": "ADIEU",
+        "clue": "Goodbye, in Paris",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 5,
+        "row": 5,
+        "column": 1,
+        "answer": "OASIS",
+        "clue": "Desert refuge",
+        "enumeration": "(5)"
+      }
+    ],
+    "down": [
+      {
+        "number": 1,
+        "row": 1,
+        "column": 1,
+        "answer": "PIANO",
+        "clue": "Instrument with 88 keys",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 2,
+        "row": 1,
+        "column": 3,
+        "answer": "ARIAS",
+        "clue": "Opera solos",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 3,
+        "row": 1,
+        "column": 5,
+        "answer": "THUGS",
+        "clue": "Hired muscle",
+        "enumeration": "(5)"
+      }
+    ]
+  }
+}

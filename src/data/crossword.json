@@ -1,0 +1,217 @@
+{
+  "title": "Example Crossword",
+  "grid": [
+    "THRUSH#YANKED",
+    "H#A#L###B#N#E",
+    "UMBRA#AXOLOTL",
+    "M#B#N#M#L#C#U",
+    "BRINGUP#IRKED",
+    "S#T###E#S#O#E",
+    "##WAFERTHIN##",
+    "E#A#A#S###E#B",
+    "SCRUB#ALOOFLY",
+    "T#R#E#N#D#F#H",
+    "AVERRED#OPERA",
+    "T#N#G###U#C#N",
+    "EASIER#GRATED"
+  ],
+  "blocks": "#",
+  "entries": {
+    "across": [
+      {
+        "number": 1,
+        "row": 1,
+        "column": 1,
+        "answer": "THRUSH",
+        "clue": "Songbird",
+        "enumeration": "(6)"
+      },
+      {
+        "number": 4,
+        "row": 1,
+        "column": 8,
+        "answer": "YANKED",
+        "clue": "Pulled with a jerk",
+        "enumeration": "(6)"
+      },
+      {
+        "number": 8,
+        "row": 3,
+        "column": 1,
+        "answer": "UMBRA",
+        "clue": "Shadow",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 9,
+        "row": 3,
+        "column": 7,
+        "answer": "AXOLOTL",
+        "clue": "Mexican salamander",
+        "enumeration": "(7)"
+      },
+      {
+        "number": 10,
+        "row": 5,
+        "column": 1,
+        "answer": "BRINGUP",
+        "clue": "Vomit - rear",
+        "enumeration": "(5,2)"
+      },
+      {
+        "number": 11,
+        "row": 5,
+        "column": 9,
+        "answer": "IRKED",
+        "clue": "Annoyed",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 12,
+        "row": 7,
+        "column": 3,
+        "answer": "WAFERTHIN",
+        "clue": "Describing a finely cut slice or chocolate mint",
+        "enumeration": "(5-4)"
+      },
+      {
+        "number": 16,
+        "row": 9,
+        "column": 1,
+        "answer": "SCRUB",
+        "clue": "Brushwood - abandon (plans eg)",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 17,
+        "row": 9,
+        "column": 7,
+        "answer": "ALOOFLY",
+        "clue": "In a haughty, detached way",
+        "enumeration": "(7)"
+      },
+      {
+        "number": 19,
+        "row": 11,
+        "column": 1,
+        "answer": "AVERRED",
+        "clue": "Declared to be true",
+        "enumeration": "(7)"
+      },
+      {
+        "number": 20,
+        "row": 11,
+        "column": 9,
+        "answer": "OPERA",
+        "clue": "Eg Tosca or Aida",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 21,
+        "row": 13,
+        "column": 1,
+        "answer": "EASIER",
+        "clue": "More straightforward",
+        "enumeration": "(6)"
+      },
+      {
+        "number": 22,
+        "row": 13,
+        "column": 8,
+        "answer": "GRATED",
+        "clue": "Reduced (esp. cheese) to slivers",
+        "enumeration": "(6)"
+      }
+    ],
+    "down": [
+      {
+        "number": 1,
+        "row": 1,
+        "column": 1,
+        "answer": "THUMBS",
+        "clue": "All fingers and __ (fumbling)",
+        "enumeration": "(6)"
+      },
+      {
+        "number": 2,
+        "row": 1,
+        "column": 3,
+        "answer": "RABBITWARRENS",
+        "clue": "Interconnected burrows",
+        "enumeration": "(6,7)"
+      },
+      {
+        "number": 3,
+        "row": 1,
+        "column": 5,
+        "answer": "SLANG",
+        "clue": "Words used informally",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 5,
+        "row": 1,
+        "column": 9,
+        "answer": "ABOLISH",
+        "clue": "Put an end to (practice or institution)",
+        "enumeration": "(7)"
+      },
+      {
+        "number": 6,
+        "row": 1,
+        "column": 11,
+        "answer": "KNOCKONEFFECT",
+        "clue": "Consequence of one event triggering others",
+        "enumeration": "(5-2,6)"
+      },
+      {
+        "number": 7,
+        "row": 1,
+        "column": 13,
+        "answer": "DELUDE",
+        "clue": "Cause to accept what is false as true",
+        "enumeration": "(6)"
+      },
+      {
+        "number": 9,
+        "row": 3,
+        "column": 7,
+        "answer": "AMPERSAND",
+        "clue": "&",
+        "enumeration": "(9)"
+      },
+      {
+        "number": 13,
+        "row": 7,
+        "column": 5,
+        "answer": "FABERGE",
+        "clue": "Maker of opulent jewelled eggs - free bag (anag)",
+        "enumeration": "(7)"
+      },
+      {
+        "number": 14,
+        "row": 8,
+        "column": 1,
+        "answer": "ESTATE",
+        "clue": "Agent, car or duty",
+        "enumeration": "(6)"
+      },
+      {
+        "number": 15,
+        "row": 8,
+        "column": 13,
+        "answer": "BYHAND",
+        "clue": "Unstamped/unfranked post delivered this way",
+        "enumeration": "(2,4)"
+      },
+      {
+        "number": 18,
+        "row": 9,
+        "column": 9,
+        "answer": "ODOUR",
+        "clue": "Smell (often unpleasant)",
+        "enumeration": "(5)"
+      }
+    ]
+  }
+}

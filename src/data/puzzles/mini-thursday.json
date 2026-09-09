@@ -1,0 +1,66 @@
+{
+  "title": "Mini Thursday",
+  "language": "en",
+  "grid": [
+    "GATES",
+    "R#H#I",
+    "AMEND",
+    "N#R#E",
+    "DIETS"
+  ],
+  "blocks": "#",
+  "entries": {
+    "across": [
+      {
+        "number": 1,
+        "row": 1,
+        "column": 1,
+        "answer": "GATES",
+        "clue": "Garden entrances",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 4,
+        "row": 3,
+        "column": 1,
+        "answer": "AMEND",
+        "clue": "Make changes to",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 5,
+        "row": 5,
+        "column": 1,
+        "answer": "DIETS",
+        "clue": "Weight-loss plans",
+        "enumeration": "(5)"
+      }
+    ],
+    "down": [
+      {
+        "number": 1,
+        "row": 1,
+        "column": 1,
+        "answer": "GRAND",
+        "clue": "Piano type, or a thousand",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 2,
+        "row": 1,
+        "column": 3,
+        "answer": "THERE",
+        "clue": "Not here",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 3,
+        "row": 1,
+        "column": 5,
+        "answer": "SIDES",
+        "clue": "Teams, or dish accompaniments",
+        "enumeration": "(5)"
+      }
+    ]
+  }
+}

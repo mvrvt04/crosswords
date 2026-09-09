@@ -1,0 +1,66 @@
+{
+  "title": "Mini Friday",
+  "language": "en",
+  "grid": [
+    "SIGNS",
+    "P#R#A",
+    "IDEAL",
+    "C#E#S",
+    "EXTRA"
+  ],
+  "blocks": "#",
+  "entries": {
+    "across": [
+      {
+        "number": 1,
+        "row": 1,
+        "column": 1,
+        "answer": "SIGNS",
+        "clue": "Road warnings",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 4,
+        "row": 3,
+        "column": 1,
+        "answer": "IDEAL",
+        "clue": "Perfect",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 5,
+        "row": 5,
+        "column": 1,
+        "answer": "EXTRA",
+        "clue": "Bonus, or a film crowd member",
+        "enumeration": "(5)"
+      }
+    ],
+    "down": [
+      {
+        "number": 1,
+        "row": 1,
+        "column": 1,
+        "answer": "SPICE",
+        "clue": "Cinnamon or cumin",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 2,
+        "row": 1,
+        "column": 3,
+        "answer": "GREET",
+        "clue": "Say hello to",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 3,
+        "row": 1,
+        "column": 5,
+        "answer": "SALSA",
+        "clue": "Dance, or dip",
+        "enumeration": "(5)"
+      }
+    ]
+  }
+}

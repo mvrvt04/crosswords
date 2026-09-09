@@ -1,0 +1,66 @@
+{
+  "title": "Mini Mercoledì",
+  "language": "it",
+  "grid": [
+    "FESTA",
+    "O#C#R",
+    "REALE",
+    "N#L#N",
+    "OPACA"
+  ],
+  "blocks": "#",
+  "entries": {
+    "across": [
+      {
+        "number": 1,
+        "row": 1,
+        "column": 1,
+        "answer": "FESTA",
+        "clue": "Compleanno o ricorrenza da celebrare",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 4,
+        "row": 3,
+        "column": 1,
+        "answer": "REALE",
+        "clue": "Vero, oppure degno di un re",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 5,
+        "row": 5,
+        "column": 1,
+        "answer": "OPACA",
+        "clue": "Non trasparente",
+        "enumeration": "(5)"
+      }
+    ],
+    "down": [
+      {
+        "number": 1,
+        "row": 1,
+        "column": 1,
+        "answer": "FORNO",
+        "clue": "Ci si cuoce il pane",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 2,
+        "row": 1,
+        "column": 3,
+        "answer": "SCALA",
+        "clue": "Serve per salire, o è il teatro di Milano",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 3,
+        "row": 1,
+        "column": 5,
+        "answer": "ARENA",
+        "clue": "Quella di Verona ospita l'opera",
+        "enumeration": "(5)"
+      }
+    ]
+  }
+}

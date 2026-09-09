@@ -1,0 +1,66 @@
+{
+  "title": "Mini Wednesday",
+  "language": "en",
+  "grid": [
+    "CHESS",
+    "H#L#O",
+    "ALIEN",
+    "N#T#A",
+    "THEIR"
+  ],
+  "blocks": "#",
+  "entries": {
+    "across": [
+      {
+        "number": 1,
+        "row": 1,
+        "column": 1,
+        "answer": "CHESS",
+        "clue": "Game with a king and a queen",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 4,
+        "row": 3,
+        "column": 1,
+        "answer": "ALIEN",
+        "clue": "Visitor from another planet",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 5,
+        "row": 5,
+        "column": 1,
+        "answer": "THEIR",
+        "clue": "Belonging to them",
+        "enumeration": "(5)"
+      }
+    ],
+    "down": [
+      {
+        "number": 1,
+        "row": 1,
+        "column": 1,
+        "answer": "CHANT",
+        "clue": "Rhythmic repeated phrase",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 2,
+        "row": 1,
+        "column": 3,
+        "answer": "ELITE",
+        "clue": "The best of the best",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 3,
+        "row": 1,
+        "column": 5,
+        "answer": "SONAR",
+        "clue": "Submarine's echo locator",
+        "enumeration": "(5)"
+      }
+    ]
+  }
+}

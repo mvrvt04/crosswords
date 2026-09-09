@@ -1,0 +1,66 @@
+{
+  "title": "Mini Saturday",
+  "language": "en",
+  "grid": [
+    "BEEPS",
+    "R#I#O",
+    "ANGEL",
+    "V#H#A",
+    "ENTER"
+  ],
+  "blocks": "#",
+  "entries": {
+    "across": [
+      {
+        "number": 1,
+        "row": 1,
+        "column": 1,
+        "answer": "BEEPS",
+        "clue": "Car horn sounds",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 4,
+        "row": 3,
+        "column": 1,
+        "answer": "ANGEL",
+        "clue": "Heavenly being",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 5,
+        "row": 5,
+        "column": 1,
+        "answer": "ENTER",
+        "clue": "Go in",
+        "enumeration": "(5)"
+      }
+    ],
+    "down": [
+      {
+        "number": 1,
+        "row": 1,
+        "column": 1,
+        "answer": "BRAVE",
+        "clue": "Not afraid",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 2,
+        "row": 1,
+        "column": 3,
+        "answer": "EIGHT",
+        "clue": "Legs on a spider",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 3,
+        "row": 1,
+        "column": 5,
+        "answer": "SOLAR",
+        "clue": "Kind of panel, or eclipse",
+        "enumeration": "(5)"
+      }
+    ]
+  }
+}

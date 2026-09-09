@@ -1,0 +1,66 @@
+{
+  "title": "Mini Monday",
+  "language": "en",
+  "grid": [
+    "STARS",
+    "T#L#T",
+    "OLIVE",
+    "K#A#E",
+    "EASEL"
+  ],
+  "blocks": "#",
+  "entries": {
+    "across": [
+      {
+        "number": 1,
+        "row": 1,
+        "column": 1,
+        "answer": "STARS",
+        "clue": "Night-sky lights",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 4,
+        "row": 3,
+        "column": 1,
+        "answer": "OLIVE",
+        "clue": "Martini garnish",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 5,
+        "row": 5,
+        "column": 1,
+        "answer": "EASEL",
+        "clue": "Painter's stand",
+        "enumeration": "(5)"
+      }
+    ],
+    "down": [
+      {
+        "number": 1,
+        "row": 1,
+        "column": 1,
+        "answer": "STOKE",
+        "clue": "Feed, as a fire",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 2,
+        "row": 1,
+        "column": 3,
+        "answer": "ALIAS",
+        "clue": "Assumed name",
+        "enumeration": "(5)"
+      },
+      {
+        "number": 3,
+        "row": 1,
+        "column": 5,
+        "answer": "STEEL",
+        "clue": "Iron alloy",
+        "enumeration": "(5)"
+      }
+    ]
+  }
+}
